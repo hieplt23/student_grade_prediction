@@ -39,15 +39,15 @@ The training data is split at a ratio of **8 : 2**. Below are the results of eac
 
 Construct a simulation app using the **Flask** library, allowing users to input information and print out predictions about the student's learning capabilities, below is an image description:
 <p align="center">
-  <img src="demo/app1.gif" width=800><br/>
+  <img src="demo/app1.png" width=800><br/>
   <i>input</i>
 </p>
 <p align="center">
-  <img src="demo/app2.gif" width=800><br/>
+  <img src="demo/app2.png" width=800><br/>
   <i>output</i>
 </p>
 <p align="center">
-  <img src="demo/app3.gif" width=800><br/>
+  <img src="demo/app3.png" width=800><br/>
   <i>more result</i>
 </p>
 
