@@ -1,0 +1,42 @@
+<p align="center">
+ <h1 align="center">Analyzing & Evaluating Student Learning Capabilities</h1>
+</p>
+
+## Introduction
+
+Hello, this is a project about evaluating a student's learning capabilities through information based on their activities and attitudes towards learning, as well as analyzing the impact of various external influences.
+## Dataset
+This data approaches the achievements of 649 students in secondary education from two schools in Portugal (2019). The data attributes include students' scores, demographic, social, and school-related characteristics, collected using school reports and questionnaires. An important note: the target attribute **G3** is closely correlated with the attributes **G2** and **G1**. This occurs because **G3** represents the final year score (awarded in the 3rd term), while **G1** and **G2** correspond to the scores of the 1st and 2nd terms, respectively.
+
+## Trained models
+
+* 5 Regression models: **KNeighborsRegressor, SVR, RandomForestRegressor, GradientBoostingRegressor, DecisionTreeRegressor.**
+
+* 7 Binary classification models: **GradientBoostingClassifier, MultinomialNB, DecisionTreeClassifier, LinearSVC, SGDClassifier, KNeighborsClassifier, RandomForestClassifier.**
+
+
+
+## Training
+
+The training data is split at a ratio of **8 : 2**. Below are the results of each model's predictions based on both the training and test sets:
+* **Regression models:**
+
+<img src="demo/output1.png" width="800"> 
+
+* **Binary classification models:**
+
+<img src="demo/output2.png" width="800"> 
+
+## APP
+
+Visualize the predictions by building a simple web app using **Flask**. You can try out the app by running the **app.py** file or by visiting the link **lethanhhiep.pythonanywhere.com** to experience it!
+
+<img src="demo/app.png" width="800"> 
+
+## Requirements
+
+* **python 3.10**
+* **scikit-learn**
+* **pandas**
+* **underthesea**
+* **flask 3.0**
