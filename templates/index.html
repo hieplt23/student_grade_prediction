@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Student grade prediction</title>
+    <link rel="stylesheet" href="../static/CSS/template.css">
+  </head>
+  <body id="main_body" data-gr-c-s-loaded="true" class="no_guidelines safari">
+    <div style="margin-bottom: 25px;" id="form_container">
+      <h1 style="color: #3d6967; text-align: center; margin-top: 5px; margin-bottom: 10px;">
+        <a>Đánh giá kết quả học tập của học sinh</a>
+      </h1>
+      <div class="predict">
+        <h1>{{prediction}}</h1>
+        {{more|safe}}
+      </div>
+      <form id="form_101882" class="appnitro" method="post" action="/result" onsubmit="return checkNullValues()">
+        <div class="form_description">
+        </div>
+          <li id="li_7">
+            <label class="description" for="Medu">Trình độ học vấn của mẹ</label>
+            <div>
+              <select class="element select small" id="Medu" name="Medu">
+                <option value="" hidden selected="selected"></option>
+                <option value="0">0/12</option>
+                <option value="1">4/12</option>
+                <option value="2">9/12</option>
+                <option value="3">12/12</option>
+                <option value="4">Đại học</option>
+              </select>
+            </div>
+          </li> <li id="li_8">
+            <label class="description" for="Fedu">Trình độ học vấn của ba</label>
+            <div>
+              <select class="element select small" id="Fedu" name="Fedu">
+                <option value="" hidden selected="selected"></option>
+                <option value="0">0/12</option>
+                <option value="1">4/12</option>
+                <option value="2">9/12</option>
+                <option value="3">12/12</option>
+                <option value="4">Đại học</option>
+              </select>
+            </div>
+          </li> <li id="li_9">
+            <label class="description" for="Mjob">Ngành nghề của mẹ</label>
+            <div>
+              <select class="element select medium" id="Mjob" name="Mjob">
+                <option value="" hidden selected="selected"></option>
+                <option value="teacher">Ngành giáo dục</option>
+                <option value="health">Ngành sức khỏe</option>
+                <option value="services">Ngành dịch vụ</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </li>
+          <li id="li_9">
+            <label class="description" for="Fjob">Ngành nghề của ba</label>
+            <div>
+              <select class="element select medium" id="Fjob" name="Fjob">
+                <option value="" hidden selected="selected"></option>
+                <option value="teacher">Ngành giáo dục</option>
+                <option value="health">Ngành sức khỏe</option>
+                <option value="services">Ngành dịch vụ</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </li>
+          <li id="li_9">
+            <label class="description" for="studytime">Thời gian học bài</label>
+            <div>
+              <select class="element select medium" id="studytime" name="studytime">
+                <option value="" hidden selected="selected"></option>
+                <option value="1">&#60; 2h</option>
+                <option value="2">2 - 5h</option>
+                <option value="3">5 - 10h</option>
+                <option value="4">&#62; 10h</option>
+              </select>
+            </div>
+          </li>
+          <li id="li_1">
+            <label class="description" for="failures">Số lần rớt môn</label>
+            <div>
+              <input class="element text medium" type="number" id="failures" name="failures" min="0" max="10" value="0">
+            </div>
+          </li>
+          <li id="li_9">
+            <label class="description" for="Dalc">Mức tiêu thụ rượu bia trong một ngày</label>
+            <div>
+              <select class="element select medium" id="Dalc" name="Dalc">
+                <option value="" hidden selected="selected"></option>
+                <option value="1">Rất ít</option>
+                <option value="2">Ít</option>
+                <option value="3">Trung bình</option>
+                <option value="4">Nhiều</option>
+                <option value="5">Rất nhiều</option>
+              </select>
+            </div>
+          </li>
+          <li id="li_1">
+            <label class="description" for="absences">Số lần vắng</label>
+            <div>
+              <input class="element text medium" type="number" name="absences" id="absences" min="0" max="93" value="0">
+            </div>
+          </li>
+          <li id="li_9">
+            <label class="description" for="reason">Lý do lựa chọn trường</label>
+            <div>
+              <select class="element select medium" id="reason" name="reason">
+                <option value="" hidden selected="selected"></option>
+                <option value="1">Gần nhà</option>
+                <option value="2">Trường có danh tiếng</option>
+                <option value="3">Khác</option>
+              </select>
+            </div>
+          </li>
+          <li id="li_9">
+            <label class="description" for="internet">Mức độ sử dụng internet</label>
+            <div>
+              <select class="element select medium" id="internet" name="internet">
+                <option value="" hidden selected="selected"></option>
+                <option value="0">Ít</option>
+                <option value="1">Nhiều</option>
+              </select>
+            </div>
+          </li>
+          <li id="li_1">
+            <label class="description" for="G1">Điểm học kỳ I</label>
+            <div>
+              <input class="element text medium" name="G1" type="number" id="G1" min="0" max="10" value="0" step="0.01">
+            </div>
+          </li>
+          <li id="li_1">
+            <label class="description" for="G2">Điểm học kỳ II</label>
+            <div>
+              <input class="element text medium" name="G2" type="number" id="G2" min="0" max="10" value="0" step="0.01">
+            </div>
+          </li>
+          <li class="buttons">
+              <input id="saveForm" onclick="return handleSubmit()" class="submit-feedback" type="submit" value="Submit" />
+          </li>
+        </ul>
+      </form>
+      <div class="color-gradient" style="text-align: center; margin-bottom: 10px;">Build by LT. Hiep</div>
+    </div>
+    <div id="loading" style="display: none; margin: auto; top: 35%"  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    
+    <script>
+      function checkNullValues() {
+        var form = document.getElementById('form_101882');
+        var elements = form.elements;
+        const element_names = ["Trình độ học vấn của mẹ", "Trình độ học vấn của ba", "Nghề nghiệp của mẹ", "Nghề nghiệp của ba",
+        "Thời gian học bài", "Số lần rớt môn", "Mức tiêu thụ rượu bia trong ngày", "Số ngày vắng", "Lý do chọn trường",
+        "Mức độ sử dụng internet"];
+
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].type !== 'button' && elements[i].type !== 'submit') {
+                var value = elements[i].value;
+                if (value === '') {
+                    alert('Vui lòng điền đầy đủ thông tin ('+ element_names[i]+')');
+                    return false;
+                }
+            }
+        }
+        return true;
+      }
+      function handleSubmit() {
+        if (checkNullValues()) {
+          showLoading();
+          setTimeout(function () {
+            hideLoading();
+          }, 3000);
+          return true;
+        }
+        return false;
+      }
+      // show loading
+      function showLoading() {
+        document.getElementById('loading').style.display = 'block';
+        document.body.classList.add('loading');
+      }
+      // hide loading
+      function hideLoading() {
+        document.getElementById('loading').style.display = 'none';
+        document.body.classList.remove('loading');
+      }
+      // more predict
+      document.getElementById('moreResults').addEventListener('click', function() {
+        window.location.href = '/more_result';
+      });
+    </script>
+  </body>
+</html>
