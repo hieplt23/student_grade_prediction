@@ -27,11 +27,29 @@ The training data is split at a ratio of **8 : 2**. Below are the results of eac
 
 <img src="demo/output2.png" width="800"> 
 
+* **Finally, here are the 2 models selected along with the choice of optimal hyperparameters:**
+  
+|      Model                                                  |      Recall     |   Precision   |   F1-score     |				Acc         |
+|-------------------------------------------------------------|:---------------:|:-------------:|:--------------:|:--------------:|
+|   LinearSVC (c=1, loss=squared_hinge)                       |      0.9        |      0.83     |   0.86         |      0.94      |
+| RandomForestClassifier (n_estimators = 50, criterion = gini)|       0.87      |      0.83     | 	0.85          |       0.94     |
+
+
 ## APP
 
-Visualize the predictions by building a simple web app using **Flask**. You can try out the app by running the **app.py** file or by visiting the link **lethanhhiep.pythonanywhere.com** to experience it!
-
-<img src="demo/app.png" width="800"> 
+Construct a simulation app using the **Flask** library, allowing users to input information and print out predictions about the student's learning capabilities, below is an image description:
+<p align="center">
+  <img src="demo/app1.gif" width=800><br/>
+  <i>input</i>
+</p>
+<p align="center">
+  <img src="demo/app2.gif" width=800><br/>
+  <i>output</i>
+</p>
+<p align="center">
+  <img src="demo/app3.gif" width=800><br/>
+  <i>more result</i>
+</p>
 
 ## Requirements
 
